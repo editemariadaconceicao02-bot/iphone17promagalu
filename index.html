@@ -262,6 +262,133 @@ h1 {
   line-height: 1.7;
 }
 
+/* ===== INÍCIO: SEÇÃO DE AVALIAÇÕES ===== */
+.secao-avaliacoes {
+  margin-top: 36px;
+  padding-top: 8px;
+}
+
+.avaliacao-cabecalho {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+.nota-principal {
+  font-size: 48px;
+  font-weight: 700;
+  color: #1A202C;
+  line-height: 1;
+}
+.estrelas {
+  color: #F59E0B;
+  font-size: 20px;
+  letter-spacing: 2px;
+}
+.qtd-avaliacoes {
+  font-size: 14px;
+  color: #718096;
+  margin-top: 4px;
+}
+
+.barras-notas {
+  flex: 1;
+  min-width: 180px;
+}
+.linha-nota {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+.nota-label {
+  font-size: 13px;
+  color: #4A5568;
+  width: 24px;
+}
+.barra-container {
+  flex: 1;
+  height: 10px;
+  background: #E8EEF2;
+  border-radius: 5px;
+  overflow: hidden;
+}
+.barra-preenchida {
+  height: 100%;
+  background: #F59E0B;
+  border-radius: 5px;
+  transition: width 0.3s ease;
+}
+.nota-qtd {
+  font-size: 12px;
+  color: #718096;
+  width: 30px;
+  text-align: right;
+}
+
+.filtros {
+  display: flex;
+  gap: 12px;
+  margin: 20px 0;
+  flex-wrap: wrap;
+}
+.filtro-btn {
+  padding: 8px 14px;
+  border: 1px solid #D1D9E0;
+  background: #ffffff;
+  border-radius: 8px;
+  font-size: 13px;
+  color: #4A5568;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.filtro-btn:hover {
+  border-color: #0066FF;
+  color: #0066FF;
+}
+
+.comentarios-lista {
+  margin-top: 24px;
+}
+.comentario-card {
+  padding: 18px 0;
+  border-bottom: 1px solid #E8EEF2;
+}
+.comentario-cabecalho {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.comentario-nome {
+  font-size: 15px;
+  font-weight: 600;
+  color: #1A202C;
+}
+.comentario-estrelas {
+  color: #F59E0B;
+  font-size: 14px;
+}
+.comentario-detalhes {
+  font-size: 12px;
+  color: #718096;
+  margin-bottom: 8px;
+}
+.comentario-texto {
+  font-size: 14px;
+  color: #2D3748;
+  line-height: 1.6;
+  margin-bottom: 6px;
+}
+.comentario-data {
+  font-size: 12px;
+  color: #9AA5B5;
+}
+/* ===== FIM: SEÇÃO DE AVALIAÇÕES ===== */
+
 .rodape {
   background: linear-gradient(135deg, #0066FF 0%, #0052CC 100%);
   color: white;
@@ -354,6 +481,107 @@ h1 {
       **A duração da bateria varia conforme o uso e a configuração da rede. Resultados reais podem diferir das imagens meramente ilustrativas.
     </div>
   </div>
+
+  <!-- ===== SEÇÃO DE AVALIAÇÕES DOS CLIENTES ===== -->
+  <div class="secao secao-avaliacoes">
+    <h3 class="titulo-secao">⭐ Avaliações dos Clientes</h3>
+
+    <div class="avaliacao-cabecalho">
+      <div>
+        <div class="nota-principal">4.8</div>
+        <div class="estrelas">★★★★★</div>
+        <div class="qtd-avaliacoes"><strong>756</strong> avaliações • <strong>360</strong> comentários</div>
+      </div>
+      <div class="barras-notas">
+        <div class="linha-nota">
+          <span class="nota-label">5</span>
+          <div class="barra-container"><div class="barra-preenchida" style="width: 92.6%;"></div></div>
+          <span class="nota-qtd">700</span>
+        </div>
+        <div class="linha-nota">
+          <span class="nota-label">4</span>
+          <div class="barra-container"><div class="barra-preenchida" style="width: 2.6%;"></div></div>
+          <span class="nota-qtd">20</span>
+        </div>
+        <div class="linha-nota">
+          <span class="nota-label">3</span>
+          <div class="barra-container"><div class="barra-preenchida" style="width: 0.8%;"></div></div>
+          <span class="nota-qtd">6</span>
+        </div>
+        <div class="linha-nota">
+          <span class="nota-label">2</span>
+          <div class="barra-container"><div class="barra-preenchida" style="width: 0.3%;"></div></div>
+          <span class="nota-qtd">2</span>
+        </div>
+        <div class="linha-nota">
+          <span class="nota-label">1</span>
+          <div class="barra-container"><div class="barra-preenchida" style="width: 3.7%;"></div></div>
+          <span class="nota-qtd">28</span>
+        </div>
+      </div>
+    </div>
+
+    <p style="font-size: 14px; color: #0066FF; font-weight: 500; margin: 8px 0;">📷 Avaliações com fotos e vídeos — 5 avaliações</p>
+
+    <div class="filtros">
+      <button class="filtro-btn">Comentários dos clientes</button>
+      <button class="filtro-btn">Ordenar</button>
+      <button class="filtro-btn">Filtrar</button>
+    </div>
+
+    <div class="comentarios-lista">
+      <div class="comentario-card">
+        <div class="comentario-cabecalho">
+          <span class="comentario-nome">Marcelo</span>
+          <span class="comentario-estrelas">★★★★★</span>
+        </div>
+        <div class="comentario-detalhes">Armazenamento interno: 256GB | Cor: Laranja-cósmico</div>
+        <p class="comentario-texto">Celular ótimo mas não fiquei satisfeito pois o 18 foi lançado logo assim que comprei esse</p>
+        <span class="comentario-data">há 28 dias</span>
+      </div>
+
+      <div class="comentario-card">
+        <div class="comentario-cabecalho">
+          <span class="comentario-nome">Aline</span>
+          <span class="comentario-estrelas">★★★★★</span>
+        </div>
+        <div class="comentario-detalhes">Armazenamento interno: 256GB | Cor: Laranja-cósmico</div>
+        <p class="comentario-texto">Maravilhoso</p>
+        <span class="comentario-data">há 17 dias</span>
+      </div>
+
+      <div class="comentario-card">
+        <div class="comentario-cabecalho">
+          <span class="comentario-nome">Betânia</span>
+          <span class="comentario-estrelas">★★★★★</span>
+        </div>
+        <div class="comentario-detalhes">Armazenamento interno: 256GB | Cor: Laranja-cósmico</div>
+        <p class="comentario-texto">Queremos produzir melhor celular</p>
+        <span class="comentario-data">há 29 dias</span>
+      </div>
+
+      <div class="comentario-card">
+        <div class="comentario-cabecalho">
+          <span class="comentario-nome">neide</span>
+          <span class="comentario-estrelas">★★★★★</span>
+        </div>
+        <div class="comentario-detalhes">Armazenamento interno: 256GB | Cor: Laranja-cósmico</div>
+        <p class="comentario-texto">Gostei. Lamentável não vir com carregador.</p>
+        <span class="comentario-data">há cerca de 1 mês</span>
+      </div>
+
+      <div class="comentario-card">
+        <div class="comentario-cabecalho">
+          <span class="comentario-nome">GERALDO</span>
+          <span class="comentario-estrelas">★★★★★</span>
+        </div>
+        <div class="comentario-detalhes">Armazenamento interno: 256GB | Cor: Laranja-cósmico</div>
+        <p class="comentario-texto">O produto é ótimo💰 chegou rápido 😃😃</p>
+        <span class="comentario-data">há cerca de 1 mês</span>
+      </div>
+    </div>
+  </div>
+  <!-- ===== FIM: SEÇÃO DE AVALIAÇÕES ===== -->
 </div>
 
 <div class="rodape">
@@ -374,32 +602,4 @@ const fotos = [
   "https://a-static.mlcdn.com.br/420x420/apple-iphone-17-pro-max-256gb-laranja-cosmico-69-48mp-ios-5g/magazineluiza/240585900/e9f0cbfda261a9f56c93d5645021b3e2.jpg",
   "https://a-static.mlcdn.com.br/420x420/apple-iphone-17-pro-max-256gb-laranja-cosmico-69-48mp-ios-5g/magazineluiza/240585900/8399ed2de25267b3d45228eed8e971e3.jpg",
   "https://a-static.mlcdn.com.br/420x420/apple-iphone-17-pro-max-256gb-laranja-cosmico-69-48mp-ios-5g/magazineluiza/240585900/159ba5b6e7a0545b0cd84aaa72504cab.jpg",
-  "https://a-static.mlcdn.com.br/420x420/apple-iphone-17-pro-max-256gb-laranja-cosmico-69-48mp-ios-5g/magazineluiza/240585900/7f5fa11b04ce84042acf93e9fa21e857.jpg"
-];
-
-let fotoAtual = 0;
-
-function trocarFoto(direcao) {
-  fotoAtual += direcao;
-  if (fotoAtual < 0) fotoAtual = fotos.length - 1;
-  if (fotoAtual >= fotos.length) fotoAtual = 0;
-  document.getElementById('fotoAtual').src = fotos[fotoAtual];
-  atualizarMiniatura();
-}
-
-function selecionarFoto(indice, elemento) {
-  fotoAtual = indice;
-  document.getElementById('fotoAtual').src = fotos[fotoAtual];
-  atualizarMiniatura();
-}
-
-function atualizarMiniatura() {
-  document.querySelectorAll('.miniatura').forEach((el, i) => {
-    el.classList.remove('selecionada');
-    if (i === fotoAtual) el.classList.add('selecionada');
-  });
-}
-</script>
-
-</body>
-</html>
+  "https://a-static.mlcdn.com.br/420x420

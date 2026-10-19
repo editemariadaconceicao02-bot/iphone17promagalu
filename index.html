@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Apple iPhone 17 Pro Max 256GB Laranja-Cósmico</title>
-<meta name="description" content="Apple iPhone 17 Pro Max 256GB Laranja-Cósmico. O iPhone mais potente já produzido. Tela de 6,9 polegadas, chip A19 Pro, câmera de 48MP. Compre com desconto no Pix!">
+<meta name="description" content="Apple iPhone 17 Pro Max 256GB Laranja-Cósmico. O iPhone mais potente já produzido.">
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body { 
@@ -69,7 +69,6 @@ body {
   height: 360px;
   object-fit: contain;
   display: block;
-  transition: opacity 0.3s ease;
 }
 .navegacao {
   position: absolute;
@@ -79,7 +78,6 @@ body {
   justify-content: space-between;
   padding: 0 16px;
   transform: translateY(-50%);
-  pointer-events: none;
 }
 .nav-btn {
   background: #ffffff;
@@ -94,12 +92,6 @@ body {
   justify-content: center;
   color: #0066FF;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-  pointer-events: auto;
-  transition: all 0.2s ease;
-}
-.nav-btn:hover {
-  background: #0066FF;
-  color: white;
 }
 
 .miniaturas {
@@ -107,14 +99,6 @@ body {
   gap: 10px;
   padding: 0 20px 16px;
   overflow-x: auto;
-  scrollbar-width: thin;
-}
-.miniaturas::-webkit-scrollbar {
-  height: 4px;
-}
-.miniaturas::-webkit-scrollbar-thumb {
-  background: #dde2e8;
-  border-radius: 2px;
 }
 .miniatura {
   width: 68px;
@@ -122,13 +106,11 @@ body {
   object-fit: cover;
   border-radius: 10px;
   cursor: pointer;
-  border: 2px solid transparent;
+  border: 3px solid transparent;
   flex-shrink: 0;
-  transition: all 0.25s ease;
 }
 .miniatura.selecionada {
   border-color: #0066FF;
-  box-shadow: 0 0 0 3px rgba(0, 102, 255, 0.12);
 }
 
 .conteudo {
@@ -143,7 +125,6 @@ body {
   padding: 5px 12px;
   border-radius: 20px;
   margin-bottom: 12px;
-  letter-spacing: 0.5px;
 }
 h1 {
   font-size: 20px;
@@ -180,7 +161,6 @@ h1 {
 }
 .preco-parcelado strong {
   color: #0066FF;
-  font-weight: 600;
 }
 
 .botao-comprar {
@@ -194,11 +174,6 @@ h1 {
   width: 100%;
   cursor: pointer;
   box-shadow: 0 4px 14px rgba(0, 102, 255, 0.3);
-  transition: all 0.25s ease;
-}
-.botao-comprar:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0, 102, 255, 0.35);
 }
 .botao-whats {
   background: linear-gradient(135deg, #00A86B 0%, #008F5C 100%);
@@ -211,10 +186,6 @@ h1 {
   width: 100%;
   cursor: pointer;
   margin-top: 12px;
-  transition: all 0.25s ease;
-}
-.botao-whats:hover {
-  transform: translateY(-1px);
 }
 
 .secao {
@@ -227,9 +198,6 @@ h1 {
   padding-bottom: 10px;
   border-bottom: 2px solid #E2E8F0;
   margin-bottom: 16px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
 }
 .lista-caracteristicas {
   list-style: none;
@@ -239,9 +207,6 @@ h1 {
   border-bottom: 1px solid #F0F4F8;
   font-size: 14px;
   color: #2D3748;
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
 }
 .lista-caracteristicas li strong {
   color: #0066FF;
@@ -283,7 +248,6 @@ h1 {
 .estrelas {
   color: #F59E0B;
   font-size: 20px;
-  letter-spacing: 2px;
 }
 .qtd-avaliacoes {
   font-size: 14px;
@@ -339,11 +303,6 @@ h1 {
   font-size: 13px;
   color: #4A5568;
   cursor: pointer;
-  transition: all 0.2s ease;
-}
-.filtro-btn:hover {
-  border-color: #0066FF;
-  color: #0066FF;
 }
 
 .comentarios-lista {
@@ -356,10 +315,8 @@ h1 {
 .comentario-cabecalho {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
   margin-bottom: 8px;
-  flex-wrap: wrap;
-  gap: 8px;
 }
 .comentario-nome {
   font-size: 15px;
@@ -400,7 +357,7 @@ h1 {
 
 <div class="cabecalho">
   <div class="logo-container">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Magalu_-_novo_logo.png?utm_source=pt.wikipedia.org&utm_campaign=index&utm_content=original" alt="Magalu" class="logo">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Magalu_-_novo_logo.png" alt="Magalu" class="logo">
     <span class="loja-nome">Magalu</span>
   </div>
   <div class="cabecalho-info">
@@ -412,24 +369,24 @@ h1 {
 <div class="produto-container">
 
 <div class="galeria-principal">
-  <img id="fotoAtual" class="foto-principal" src="https://a-static.mlcdn.com.br/420x420/apple-iphone-17-pro-max-256gb-laranja-cosmico-69-48mp-ios-5g/magazineluiza/240585900/e167416ee9fc503730ed00858aa49109.jpg" alt="Apple iPhone 17 Pro Max - Laranja-Cósmico">
+  <img id="foto-principal" class="foto-principal" src="https://a-static.mlcdn.com.br/420x420/apple-iphone-17-pro-max-256gb-laranja-cosmico-69-48mp-ios-5g/magazineluiza/240585900/e167416ee9fc503730ed00858aa49109.jpg" alt="Apple iPhone 17 Pro Max">
   <div class="navegacao">
-    <button class="nav-btn" onclick="trocarFoto(-1)">◀</button>
-    <button class="nav-btn" onclick="trocarFoto(1)">▶</button>
+    <button class="nav-btn" id="btn-anterior">◀</button>
+    <button class="nav-btn" id="btn-proximo">▶</button>
   </div>
 </div>
 
-<div class="miniaturas">
-  <img class="miniatura selecionada" src="https://a-static.mlcdn.com.br/420x420/apple-iphone-17-pro-max-256gb-laranja-cosmico-69-48mp-ios-5g/magazineluiza/240585900/e167416ee9fc503730ed00858aa49109.jpg" onclick="selecionarFoto(0)" alt="Foto Principal">
-  <img class="miniatura" src="https://a-static.mlcdn.com.br/420x420/apple-iphone-17-pro-max-256gb-laranja-cosmico-69-48mp-ios-5g/magazineluiza/240585900/0b9f1b3df55953468c9869fb045d3342.jpg" onclick="selecionarFoto(1)" alt="Foto 2">
-  <img class="miniatura" src="https://a-static.mlcdn.com.br/420x420/apple-iphone-17-pro-max-256gb-laranja-cosmico-69-48mp-ios-5g/magazineluiza/240585900/87f65d6b8862fbbce4fd64fc98531f53.jpg" onclick="selecionarFoto(2)" alt="Foto 3">
-  <img class="miniatura" src="https://a-static.mlcdn.com.br/420x420/apple-iphone-17-pro-max-256gb-laranja-cosmico-69-48mp-ios-5g/magazineluiza/240585900/375c2c885ea75902e1cc50f18e1ca27f.jpg" onclick="selecionarFoto(3)" alt="Foto 4">
-  <img class="miniatura" src="https://a-static.mlcdn.com.br/420x420/apple-iphone-17-pro-max-256gb-laranja-cosmico-69-48mp-ios-5g/magazineluiza/240585900/c19ef72a4a6598ddf08785e9f37f2913.jpg" onclick="selecionarFoto(4)" alt="Foto 5">
-  <img class="miniatura" src="https://a-static.mlcdn.com.br/420x420/apple-iphone-17-pro-max-256gb-laranja-cosmico-69-48mp-ios-5g/magazineluiza/240585900/90f7c227f4650b5790bf06ee7513f29a.jpg" onclick="selecionarFoto(5)" alt="Foto 6">
-  <img class="miniatura" src="https://a-static.mlcdn.com.br/420x420/apple-iphone-17-pro-max-256gb-laranja-cosmico-69-48mp-ios-5g/magazineluiza/240585900/e9f0cbfda261a9f56c93d5645021b3e2.jpg" onclick="selecionarFoto(6)" alt="Foto 7">
-  <img class="miniatura" src="https://a-static.mlcdn.com.br/420x420/apple-iphone-17-pro-max-256gb-laranja-cosmico-69-48mp-ios-5g/magazineluiza/240585900/8399ed2de25267b3d45228eed8e971e3.jpg" onclick="selecionarFoto(7)" alt="Foto 8">
-  <img class="miniatura" src="https://a-static.mlcdn.com.br/420x420/apple-iphone-17-pro-max-256gb-laranja-cosmico-69-48mp-ios-5g/magazineluiza/240585900/159ba5b6e7a0545b0cd84aaa72504cab.jpg" onclick="selecionarFoto(8)" alt="Foto 9">
-  <img class="miniatura" src="https://a-static.mlcdn.com.br/420x420/apple-iphone-17-pro-max-256gb-laranja-cosmico-69-48mp-ios-5g/magazineluiza/240585900/7f5fa11b04ce84042acf93e9fa21e857.jpg" onclick="selecionarFoto(9)" alt="Foto 10">
+<div class="miniaturas" id="lista-miniaturas">
+  <img class="miniatura selecionada" src="https://a-static.mlcdn.com.br/420x420/apple-iphone-17-pro-max-256gb-laranja-cosmico-69-48mp-ios-5g/magazineluiza/240585900/e167416ee9fc503730ed00858aa49109.jpg" data-indice="0" alt="Foto 1">
+  <img class="miniatura" src="https://a-static.mlcdn.com.br/420x420/apple-iphone-17-pro-max-256gb-laranja-cosmico-69-48mp-ios-5g/magazineluiza/240585900/0b9f1b3df55953468c9869fb045d3342.jpg" data-indice="1" alt="Foto 2">
+  <img class="miniatura" src="https://a-static.mlcdn.com.br/420x420/apple-iphone-17-pro-max-256gb-laranja-cosmico-69-48mp-ios-5g/magazineluiza/240585900/87f65d6b8862fbbce4fd64fc98531f53.jpg" data-indice="2" alt="Foto 3">
+  <img class="miniatura" src="https://a-static.mlcdn.com.br/420x420/apple-iphone-17-pro-max-256gb-laranja-cosmico-69-48mp-ios-5g/magazineluiza/240585900/375c2c885ea75902e1cc50f18e1ca27f.jpg" data-indice="3" alt="Foto 4">
+  <img class="miniatura" src="https://a-static.mlcdn.com.br/420x420/apple-iphone-17-pro-max-256gb-laranja-cosmico-69-48mp-ios-5g/magazineluiza/240585900/c19ef72a4a6598ddf08785e9f37f2913.jpg" data-indice="4" alt="Foto 5">
+  <img class="miniatura" src="https://a-static.mlcdn.com.br/420x420/apple-iphone-17-pro-max-256gb-laranja-cosmico-69-48mp-ios-5g/magazineluiza/240585900/90f7c227f4650b5790bf06ee7513f29a.jpg" data-indice="5" alt="Foto 6">
+  <img class="miniatura" src="https://a-static.mlcdn.com.br/420x420/apple-iphone-17-pro-max-256gb-laranja-cosmico-69-48mp-ios-5g/magazineluiza/240585900/e9f0cbfda261a9f56c93d5645021b3e2.jpg" data-indice="6" alt="Foto 7">
+  <img class="miniatura" src="https://a-static.mlcdn.com.br/420x420/apple-iphone-17-pro-max-256gb-laranja-cosmico-69-48mp-ios-5g/magazineluiza/240585900/8399ed2de25267b3d45228eed8e971e3.jpg" data-indice="7" alt="Foto 8">
+  <img class="miniatura" src="https://a-static.mlcdn.com.br/420x420/apple-iphone-17-pro-max-256gb-laranja-cosmico-69-48mp-ios-5g/magazineluiza/240585900/159ba5b6e7a0545b0cd84aaa72504cab.jpg" data-indice="8" alt="Foto 9">
+  <img class="miniatura" src="https://a-static.mlcdn.com.br/420x420/apple-iphone-17-pro-max-256gb-laranja-cosmico-69-48mp-ios-5g/magazineluiza/240585900/7f5fa11b04ce84042acf93e9fa21e857.jpg" data-indice="9" alt="Foto 10">
 </div>
 
 <div class="conteudo">
@@ -446,36 +403,32 @@ h1 {
   <a href="pagamento.html" style="text-decoration: none;">
     <button class="botao-comprar">🛒 COMPRAR AGORA</button>
   </a>
-  <a href="https://wa.me/5549912345678?text=Olá! Tenho interesse no iPhone 17 Pro Max — R$ 8.113,80 à vista no Pix." target="_blank" style="text-decoration: none;">
+  <a href="https://wa.me/5549912345678" target="_blank" style="text-decoration: none;">
     <button class="botao-whats">💬 Falar no WhatsApp</button>
   </a>
 
   <div class="secao">
     <h3 class="titulo-secao">📋 Especificações Técnicas</h3>
     <ul class="lista-caracteristicas">
-      <li>📦 <strong>Armazenamento:</strong> 256GB</li>
-      <li>📱 <strong>Tela:</strong> 6,9" Liquid Retina XDR — bordas arredondadas</li>
-      <li>📸 <strong>Câmera Traseira:</strong> Sistema Pro de 48MP — ultra-angular, grande-angular e teleobjetiva</li>
-      <li>🤳 <strong>Câmera Frontal:</strong> 18MP com recurso de Autofoco</li>
-      <li>⚡ <strong>Chip:</strong> A19 Pro — desempenho revolucionário e eficiência energética</li>
-      <li>🔋 <strong>Bateria:</strong> Íon de lítio recarregável — a maior duração já vista em um iPhone</li>
-      <li>🌐 <strong>Conectividade:</strong> 5G • Wi-Fi 7 • Bluetooth 5.3 • USB-C</li>
-      <li>🎨 <strong>Acabamento:</strong> Estrutura unibody em alumínio — cor Laranja-Cósmico</li>
+      <li><strong>Armazenamento:</strong> 256GB</li>
+      <li><strong>Tela:</strong> 6,9" Liquid Retina XDR</li>
+      <li><strong>Câmera Traseira:</strong> Sistema Pro de 48MP</li>
+      <li><strong>Câmera Frontal:</strong> 18MP com Autofoco</li>
+      <li><strong>Chip:</strong> A19 Pro</li>
+      <li><strong>Bateria:</strong> Íon de lítio recarregável</li>
+      <li><strong>Conectividade:</strong> 5G • Wi-Fi 7 • Bluetooth 5.3 • USB-C</li>
+      <li><strong>Cor:</strong> Laranja-Cósmico</li>
     </ul>
   </div>
 
   <div class="secao">
     <h3 class="titulo-secao">📝 Sobre este Produto</h3>
     <p class="texto-descricao">
-      O <strong>iPhone 17 Pro Max</strong> representa uma nova geração de excelência. Equipado com o revolucionário chip A19 Pro, ele oferece desempenho excepcional e gráficos de nível profissional. Sua tela de 6,9 polegadas é a maior já vista em um iPhone, com brilho impressionante e cores verdadeiras.<br><br>
-      O sistema de câmeras Pro captura fotos deslumbrantes em qualquer condição de luz, enquanto a câmera frontal de 18MP com autofoco garante selfies nítidos como nunca antes. A estrutura unibody em alumínio combina elegância e durabilidade em um design que parece escultura.<br><br>
-      Tudo isso com a maior duração de bateria já disponível em um iPhone — para você passar o dia inteiro e ainda ter energia de sobra. Simplesmente, o iPhone mais avançado já criado.
+      O <strong>iPhone 17 Pro Max</strong> oferece desempenho excepcional com o chip A19 Pro, tela de 6,9 polegadas e sistema de câmeras Pro. A maior duração de bateria já vista em um iPhone.
     </p>
-
     <div class="caixa-aviso">
       <strong>Avisos importantes:</strong><br>
-      *A tela tem bordas arredondadas que se ajustam ao design curvo do aparelho. Quando medida como um retângulo, a área ativa é menor. Consulte as medidas oficiais para detalhes.<br>
-      **A duração da bateria varia conforme o uso e a configuração da rede. Resultados reais podem diferir das imagens meramente ilustrativas.
+      Imagens meramente ilustrativas. Consulte detalhes nas especificações oficiais.
     </div>
   </div>
 
@@ -531,47 +484,43 @@ h1 {
           <span class="comentario-nome">Marcelo</span>
           <span class="comentario-estrelas">★★★★★</span>
         </div>
-        <div class="comentario-detalhes">Armazenamento interno: 256GB | Cor: Laranja-cósmico</div>
+        <div class="comentario-detalhes">Armazenamento: 256GB | Cor: Laranja-Cósmico</div>
         <p class="comentario-texto">Celular ótimo mas não fiquei satisfeito pois o 18 foi lançado logo assim que comprei esse</p>
         <span class="comentario-data">há 28 dias</span>
       </div>
-
       <div class="comentario-card">
         <div class="comentario-cabecalho">
           <span class="comentario-nome">Aline</span>
           <span class="comentario-estrelas">★★★★★</span>
         </div>
-        <div class="comentario-detalhes">Armazenamento interno: 256GB | Cor: Laranja-cósmico</div>
+        <div class="comentario-detalhes">Armazenamento: 256GB | Cor: Laranja-Cósmico</div>
         <p class="comentario-texto">Maravilhoso</p>
         <span class="comentario-data">há 17 dias</span>
       </div>
-
       <div class="comentario-card">
         <div class="comentario-cabecalho">
           <span class="comentario-nome">Betânia</span>
           <span class="comentario-estrelas">★★★★★</span>
         </div>
-        <div class="comentario-detalhes">Armazenamento interno: 256GB | Cor: Laranja-cósmico</div>
+        <div class="comentario-detalhes">Armazenamento: 256GB | Cor: Laranja-Cósmico</div>
         <p class="comentario-texto">Queremos produzir melhor celular</p>
         <span class="comentario-data">há 29 dias</span>
       </div>
-
       <div class="comentario-card">
         <div class="comentario-cabecalho">
           <span class="comentario-nome">neide</span>
           <span class="comentario-estrelas">★★★★★</span>
         </div>
-        <div class="comentario-detalhes">Armazenamento interno: 256GB | Cor: Laranja-cósmico</div>
+        <div class="comentario-detalhes">Armazenamento: 256GB | Cor: Laranja-Cósmico</div>
         <p class="comentario-texto">Gostei. Lamentável não vir com carregador.</p>
         <span class="comentario-data">há cerca de 1 mês</span>
       </div>
-
       <div class="comentario-card">
         <div class="comentario-cabecalho">
           <span class="comentario-nome">GERALDO</span>
           <span class="comentario-estrelas">★★★★★</span>
         </div>
-        <div class="comentario-detalhes">Armazenamento interno: 256GB | Cor: Laranja-cósmico</div>
+        <div class="comentario-detalhes">Armazenamento: 256GB | Cor: Laranja-Cósmico</div>
         <p class="comentario-texto">O produto é ótimo💰 chegou rápido 😃😃</p>
         <span class="comentario-data">há cerca de 1 mês</span>
       </div>
@@ -587,6 +536,7 @@ h1 {
 </div>
 
 <script>
+// Array com todas as URLs das fotos
 const fotos = [
   "https://a-static.mlcdn.com.br/420x420/apple-iphone-17-pro-max-256gb-laranja-cosmico-69-48mp-ios-5g/magazineluiza/240585900/e167416ee9fc503730ed00858aa49109.jpg",
   "https://a-static.mlcdn.com.br/420x420/apple-iphone-17-pro-max-256gb-laranja-cosmico-69-48mp-ios-5g/magazineluiza/240585900/0b9f1b3df55953468c9869fb045d3342.jpg",
@@ -600,9 +550,57 @@ const fotos = [
   "https://a-static.mlcdn.com.br/420x420/apple-iphone-17-pro-max-256gb-laranja-cosmico-69-48mp-ios-5g/magazineluiza/240585900/7f5fa11b04ce84042acf93e9fa21e857.jpg"
 ];
 
-let fotoAtual = 0;
+let indiceAtual = 0;
+const fotoPrincipal = document.getElementById('foto-principal');
+const miniaturas = document.querySelectorAll('.miniatura');
+const btnAnterior = document.getElementById('btn-anterior');
+const btnProximo = document.getElementById('btn-proximo');
 
-function trocarFoto(direcao) {
-  fotoAtual += direcao;
-  if (fotoAtual < 0) fotoAtual = fotos.length - 1;
-  if (fotoAtual >= fotos.lengt
+// Função para trocar a foto
+function trocarFoto(indice) {
+  indiceAtual = indice;
+  fotoPrincipal.src = fotos[indiceAtual];
+  atualizarSelecao();
+}
+
+// Atualiza qual miniatura está selecionada
+function atualizarSelecao() {
+  miniaturas.forEach((img, i) => {
+    if (i === indiceAtual) {
+      img.classList.add('selecionada');
+    } else {
+      img.classList.remove('selecionada');
+    }
+  });
+}
+
+// Próxima foto
+btnProximo.addEventListener('click', function() {
+  if (indiceAtual < fotos.length - 1) {
+    trocarFoto(indiceAtual + 1);
+  } else {
+    trocarFoto(0);
+  }
+});
+
+// Foto anterior
+btnAnterior.addEventListener('click', function() {
+  if (indiceAtual > 0) {
+    trocarFoto(indiceAtual - 1);
+  } else {
+    trocarFoto(fotos.length - 1);
+  }
+});
+
+// Clique nas miniaturas
+miniaturas.forEach((img) => {
+  img.addEventListener('click', function() {
+    const indice = parseInt(this.getAttribute('data-indice'));
+    trocarFoto(indice);
+  });
+});
+</script>
+
+</body>
+</html>
+
